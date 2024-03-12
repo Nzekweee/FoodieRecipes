@@ -1,0 +1,182 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--sky);
+  }
+
+  h3{
+    font-size: 24px;
+    margin: 20px 0;
+  }
+
+  .form__signin{
+    height: 100vh;
+  }
+
+  .form__siginup__container{
+    margin: 50px 0;
+  }
+  
+  .form__container {
+    text-align: center;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  
+  }
+  
+  
+  form, .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .form-group {
+    position: relative;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="password"],
+  button,
+  label {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+  }
+
+
+  input[type="text"],
+  input[type="email"],
+  input[type="password"]{
+    padding-left: 24px;
+    border: none;
+    border-bottom: 1px solid #ccc;
+  }
+
+  input::placeholder{
+    font-size: 12px;
+  }
+
+
+  .input-icon{
+    position: absolute;
+    display: block;
+    font-size: 14px;
+    top: 10px;
+    color: #ccc;
+  }
+
+  .view-password, .hide-password{
+    cursor: pointer;
+  }
+  
+  .input-checkbox {
+    position: absolute;
+    left: 0;
+    height: 22px;
+    width: 22px;
+    background-color: #c2e9fb;
+    border-radius: 4px;
+  }
+
+  .role__cont{
+    margin: 20px 0;
+    justify-content: space-between;
+  }
+
+  .role__cont div{
+       padding: 10px;
+       border-radius: 8px;
+       border: 1px solid #ccc;
+       cursor: pointer;
+  }
+
+  .role__cont  .role__cont__select, .role__cont div:hover{
+    background: var(--sky);
+    border: none;
+    font-weight: 600;
+  }
+
+
+  .input-checkbox:checked{
+    background-color: #a1c4fd;
+  }
+
+  .label-checkbox {
+    position: relative;
+    display: block;
+    cursor: pointer;
+  }
+
+  .label-checkbox:after {
+    content: '';
+    position: absolute;
+    left: 7px;
+    top: 2px;
+    width: 5px;
+    height: 10px;
+    border: solid #333;
+    border-width: 0 3px 3px 0;
+    transform: rotate(45deg);
+    opacity: 0;
+  }
+
+  .input-checkbox:checked + .label-checkbox:after {
+    opacity: 1;
+  }
+
+  .terms{
+    margin-left: 8px;
+  }
+
+
+  button {
+    background: var(--sky);
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 10px 0;
+    transition: var(--transition);
+  }
+  
+  button:hover {
+    background: var(--skyhover);
+  }
+  
+  .signin-link {
+    font-size: 14px;
+  }
+
+  .no-opacity{
+opacity: 0;
+  }
+
+  /* Media queries small devices */
+@media screen and (max-width: 410px) {
+    .form__siginup__container {
+        margin: 0;
+      }
+
+    .terms{
+        text-align: start;
+        font-size: 12px;
+    }
+
+    .form__signin{
+        background: white;
+        height: auto;
+    }
+
+    .form__signin .form__container {
+        border-radius: 0;
+        box-shadow: none;       
+      }
+      
+    }
+  
