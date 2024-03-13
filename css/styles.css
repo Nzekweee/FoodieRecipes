@@ -279,7 +279,7 @@ background: #c2e9fb;
     overflow: hidden;
   }
 
-  .header__right div img, .trending__recipe-imagecont img, .about-img img{
+  .header__right div img, .trending__recipe-imagecont img, .about-img img,  .services section div img{
     object-fit: cover;
 }
 
@@ -391,7 +391,7 @@ cursor: pointer;
 flex-basis: 50%;
 color: #c2e9fb;
 }
-.chef__container-right,.social-icons {
+.chef__container-right,.social-icons, .services ul {
  gap: 20px;
 }
 
@@ -425,7 +425,34 @@ color: #c2e9fb;
 }
 
 .about__container{
+    margin-top: 6rem;
     line-height: 1.5;
+    gap: 4rem;
+}
+
+.services p{
+    margin-bottom: 20px;
+    
+}
+.services section{
+    gap: 40px;
+}
+
+.services ul{
+    font-size: 18px;
+    font-weight: 500;
+    flex-basis: 50%;
+}
+
+.services ul li{
+list-style: square;
+}
+
+ .services section div {
+    height: 500px;
+    width: 500px;
+
+  
 }
 
 
@@ -574,6 +601,16 @@ color: #c2e9fb;
         margin: 2rem 0;
     }
 
+    /* About Page */
+    .services section{
+        flex-wrap: wrap;
+    }
+
+    .services ul{
+        flex-basis: 100%;
+        font-size: 16px;
+    }
+
       
 }
 
@@ -652,5 +689,12 @@ color: #c2e9fb;
 justify-content: flex-start;
 align-items: start;
 gap: 20px;
+}
+
+.about-img{
+    height: 320px;
+}
+.services section div{
+    height: 100%;
 }
 }
