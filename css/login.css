@@ -176,6 +176,28 @@ input[type='file']::file-selector-button{
   font-weight: 500;
 }
 
+
+.alert__message{
+  background: rgba(247, 47, 47, 0.438);
+  color: #da0f3f;
+  padding: 12px ;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  font-weight: 500;
+  text-align: left;
+}
+
+
+.alert__message.error{
+  background: rgba(247, 47, 47, 0.438);
+  color: #da0f3f;
+}
+
+.alert__message.success{
+  background: #a1c4fd1f;
+  color: #a1c4fd;
+  font-weight: 600;
+}
   /* Media queries small devices */
 @media screen and (max-width: 410px) {
     .form__siginup__container {
