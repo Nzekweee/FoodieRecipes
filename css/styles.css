@@ -270,7 +270,7 @@ background: #c2e9fb;
    padding-bottom: 2px;
   }
 
-  .header__right div{
+  .header__right div, .about-img, .recipe-image{
     height:28rem ;
     width: 100%;
     border: 1rem solid #92b2e6;
@@ -279,7 +279,7 @@ background: #c2e9fb;
     overflow: hidden;
   }
 
-  .header__right div img{
+  .header__right div img, .trending__recipe-imagecont img, .about-img img{
     object-fit: cover;
 }
 
@@ -357,10 +357,6 @@ cursor: pointer;
     overflow: hidden;
 }
 
-.trending__recipe-imagecont img{
- object-fit: cover;
-}
-
 .recipe-title{
     font-weight: 600;
 }
@@ -421,6 +417,17 @@ color: #c2e9fb;
     color: #92b2e6;
     margin-bottom: 30px;
 }
+
+/* ABOUT US PAGE STYLES */
+.about-img{
+    margin: 2rem 0;
+    height: 500px;
+}
+
+.about__container{
+    line-height: 1.5;
+}
+
 
 /* Media queries medium devices */
 @media screen and (max-width: 1024px) {
