@@ -157,6 +157,25 @@ body {
 opacity: 0;
   }
 
+  .user-profile-div{
+    text-align: left;
+  }
+
+  .user-profile-div label{
+    padding-left: 0;
+    font-weight: 600;
+  }
+
+input[type='file']::file-selector-button{
+  background: var(--sky);
+  border: none;
+  padding: 8px 10px;
+  margin-right:12px ;
+  border-radius: 3px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
   /* Media queries small devices */
 @media screen and (max-width: 410px) {
     .form__siginup__container {
@@ -176,6 +195,10 @@ opacity: 0;
     .form__signin .form__container {
         border-radius: 0;
         box-shadow: none;       
+      }
+
+      .role__cont{
+        font-size: 14px;
       }
       
     }

@@ -12,6 +12,9 @@
   <div class="form__container form__siginup__container">
     <div class="nav__logo flex-row div-center"> <img src="/assets/foodie-logo.png" alt="logo"> Foodie<span>Recipes</span></div>
     <h3>Create an account</h3>
+    <div class="error-message error">
+        This is an error message
+    </div>
     <form action="#">
       <div class="form-group">
         <span class="input-icon  fa-regular fa-user"></span>
@@ -48,10 +51,14 @@
             <span>Admin</span>
          </div>
        </div>
+       <div class="form-group user-profile-div">
+        <label for="user-profile">User Profile Picture</label>
+        <input type="file" accept='image/*' id="user-avatar" required>
+       </div>
       <div class="form-group flex-row div-center terms__box">
         <div class="signup-checkbox">
-            <input id="first_name" type="checkbox" class="input-checkbox" required>
-            <label for="first_name" class="label-checkbox"></label>
+            <input id="checkmark" type="checkbox" class="input-checkbox" required>
+            <label for="checkmark" class="label-checkbox"></label>
           </div>
         <p class="terms">By signing up, you agree to the terms and conditions.</p>
       </div>
