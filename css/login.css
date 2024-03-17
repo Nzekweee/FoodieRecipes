@@ -182,7 +182,7 @@ input[type='file']::file-selector-button{
   color: #da0f3f;
   padding: 12px ;
   margin-bottom: 20px;
-  border-radius: 10px;
+  border-radius: 4px;
   font-weight: 500;
   text-align: left;
 }
