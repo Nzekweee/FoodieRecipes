@@ -13,11 +13,14 @@ searchInput = document.getElementById("searchInput"),
 searchDropdown = document.getElementById("searchDropdown"),
 viewFilters = document.querySelector(".view-filters"),
 searchContainerBottom = document.querySelector(".search__container-bottom"),
-customDropdowns = document.querySelectorAll(".custom-dropdown");
+customDropdowns = document.querySelectorAll(".custom-dropdown"),
+sideBar = document.querySelector('.dashboard__sidebar'),
+showSideBarToggle  = document.querySelector('#show__sidebar-btn'),
+hideSideBarToggle  = document.querySelector('#hide__sidebar-btn')
+// console.log(document.querySelector('aside'))
 
 
-
-
+//navbar
 openNavIcon ? openNavIcon.addEventListener("click", () => {
      navItems.forEach((navItem)=>{
        navItem.style.display = "flex";
@@ -33,6 +36,26 @@ closeNavIcon ? closeNavIcon.addEventListener("click", () =>{
       openNavIcon.classList.remove("hidden")
       closeNavIcon.classList.add("hidden")
 }): null;
+
+
+//dashboard nav
+const showSideBar = () =>{
+  sideBar.style.left = '0'
+  showSideBarToggle.style.display = 'none'
+  hideSideBarToggle.style.display = 'inline-block'
+
+}
+
+const hideSideBar = () =>{
+  sideBar.style.left = '-100%'
+  hideSideBarToggle.style.display = 'none'
+  showSideBarToggle.style.display = 'inline-block'
+}
+if(sideBar){
+ showSideBarToggle.addEventListener('click', showSideBar)
+ hideSideBarToggle.addEventListener('click', hideSideBar)
+}
+
 
 //liking recipes
 let likeBool = false
@@ -57,7 +80,6 @@ if (recipeLike){
 
 
 //password
-// Toggle password visibility when view icon is clicked
 if (viewPasswordIcon) {
   viewPasswordIcon.forEach((viewIcon, idx) => {
     viewIcon.addEventListener("click", () => {
@@ -68,7 +90,6 @@ if (viewPasswordIcon) {
   });
 }
 
-// Toggle password visibility when hide icon is clicked
 if (hidePasswordIcon) {
   hidePasswordIcon.forEach((hideIcon, idx) => {
     hideIcon.addEventListener("click", () => {
@@ -269,7 +290,8 @@ document.addEventListener('click', function(event) {
 const rateRecipeBtn = document.querySelector('.rate-recipe-btn');
 const ratingContainer = document.querySelector('.rating-container');
 
-// Show rating container on button click
+if(rateRecipeBtn){
+  // Show rating container on button click
 rateRecipeBtn.addEventListener('click', () => {
   ratingContainer.style.display = 'block';
 });
@@ -303,3 +325,5 @@ ratingContainer.addEventListener('click', (event) => {
   }
 });
 
+
+}

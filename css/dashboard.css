@@ -1,27 +1,39 @@
-/* .dashboard__sidebar ul{
-    position: fixed;
-} */
-
 .dashboard__container{
     display: grid;
     grid-template-columns: 14rem auto;
-    gap: 1rem;
- 
+    gap: 1rem; 
+}
+.dashboard__container,.dashboard__sidebar,.main__container{
+    height: 79vh;
 }
 
-
-.dashboard__sidebar{
-    margin: 4rem 0;
+.sidebar__toggle{
+    display: none;
+    background-color: #a1c4fd;
+    color: #a1c4fd;
     position: fixed;
-    top: 50px;
+    z-index: 2;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50% 0 0 50%;
+    right: 0;
+    bottom: 4rem;
+    border: none;    
+}
+.sidebar__toggle i{
+    color: white;
+    font-size: 18px;
+}
+.dashboard__sidebar{
+    /* position: sticky; */
+    top: 120.66px;
     bottom: 0;
     z-index: 10;
-    height: 90vh;
     background: var(--sky) ;
+    transition: var(--transition);
 }
 
 .dashboard__sidebar ul a{
-/* background: #a1c4fd ; */
 border-bottom:  1px solid white;
 display: flex;
 gap: 1rem;
@@ -34,3 +46,141 @@ transition: var(--transition);
 .dashboard__sidebar ul a:hover, .dashboard__sidebar-active{
     background-color: #a1c4fd;
 }
+
+.main__container{
+/* position: sticky; */
+background: var(--sky);
+width: 100%;
+padding: 1.6rem;
+overflow-y: auto;
+}
+
+h4{
+    color: #3d4b63;
+    font-size: 30px;
+}
+
+.form-group, select {
+    margin-top: 30px;
+
+}
+
+.recipe-ing-group, article, .direction-title-cont{
+    margin-bottom: 30px;
+    gap: 8px;
+    align-items: center;
+}
+
+.recipe-ing-group i, .add-ing, .add-dir, .remove-dir{
+    font-weight: bold;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.form-group input, textarea, select{
+    padding: 1rem;
+    border: 2px solid white;
+    border-radius: 5px;
+    resize: none;
+    background: #92b2e6;
+}
+
+.directions section, .form-group input, textarea, select{
+    width: 500px;
+}
+
+.direction-title-cont input{
+    width: 446px;
+}
+
+.form-group label{
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.form-group input::placeholder, textarea::placeholder{
+    color: white;
+}
+
+select {
+    position: relative;
+    z-index: 1;
+    font-weight: 700;
+    margin-bottom: 2rem;
+}
+
+select::after {
+    content: '\25BC'; 
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    font-size: 14px;
+    color: #555;
+}
+
+select:focus {
+    outline: none;
+    border-color: #a1c4fd;
+    box-shadow: 0 0 5px #0074d980;
+}
+
+#create-recipe{
+    margin: 0;
+}
+
+@media screen and (max-width: 840px) {
+    .dashboard__container{
+        grid-template-columns: 4rem auto;
+    }
+    .dashboard__sidebar ul a span{
+        display: none;
+    }
+
+    .directions section, .form-group input, textarea, select{
+        width: 100%;
+    }
+
+     .direction-title-cont{
+        gap: 4px;
+        font-size: 14px;
+    }
+
+    .direction-title-cont span{
+        flex-basis: 10%;
+    }
+     }
+
+
+ @media screen and (max-width: 425px) {
+    h4{
+        font-size: 24px;
+    }
+
+    .dashboard__sidebar{
+        position: fixed;
+        left: -100%;
+        top: 82px;
+        height: 100vh;
+        box-shadow: 2rem 0 4rem rgba(0, 0, 0, 0.4);
+        width: 4rem;
+        font-size: 14px;
+    }
+
+    .sidebar__toggle{
+        display: inline-block;
+    }
+
+    #hide__sidebar-btn{
+        display: none ; 
+    }
+
+    .dashboard__container{
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .dashboard__container,.main__container{
+        height: 100%;
+    }
+     }
