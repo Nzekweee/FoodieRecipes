@@ -178,8 +178,6 @@ input[type='file']::file-selector-button{
 
 
 .alert__message{
-  background: rgba(247, 47, 47, 0.438);
-  color: #da0f3f;
   padding: 12px ;
   margin-bottom: 20px;
   border-radius: 4px;

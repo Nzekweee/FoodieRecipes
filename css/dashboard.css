@@ -157,6 +157,20 @@ select:focus {
      }
 
 
+    .edit-btn, .del-btn{
+        display: block;
+        font-size: 14px;
+        background: #c2e9fb ;
+    }
+
+    .del-btn{
+        background: #f72f2f;
+        color: white;
+    }
+    .edit-btn:hover, .del-btn:hover{
+    border: none;
+    }
+
  @media screen and (max-width: 425px) {
     h4{
         font-size: 24px;
