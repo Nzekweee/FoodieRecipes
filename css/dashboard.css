@@ -134,6 +134,45 @@ select:focus {
     object-fit: cover;
 }
 
+.edit-btn, .del-btn{
+    display: flex;
+    font-size: 14px;
+    background: #c2e9fb ;
+    width: 94px;
+    margin: 0;
+}
+
+.del-btn{
+    background: #f72f2f;
+    color: white;
+}
+.edit-btn:hover, .del-btn:hover{
+border: none;
+}
+
+.main__container table{
+    margin-top: 30px;
+    width:100% ;
+    text-align: left;
+}
+
+.main__container table th{
+padding: 0.8rem;
+background: #92b2e6;
+}
+
+.main__container table td{
+    padding: 0.8rem;
+    border-bottom: 1px solid #92b2e6;
+    }
+
+.main__container table tr:hover td{
+background-color: #92b2e6 ;
+transition: hover;
+    
+    }
+
+
 @media screen and (max-width: 840px) {
     .dashboard__container{
         grid-template-columns: 4rem auto;
@@ -157,19 +196,6 @@ select:focus {
      }
 
 
-    .edit-btn, .del-btn{
-        display: block;
-        font-size: 14px;
-        background: #c2e9fb ;
-    }
-
-    .del-btn{
-        background: #f72f2f;
-        color: white;
-    }
-    .edit-btn:hover, .del-btn:hover{
-    border: none;
-    }
 
  @media screen and (max-width: 425px) {
     h4{
@@ -201,5 +227,13 @@ select:focus {
 
     .dashboard__container,.main__container{
         height: 100%;
+    }
+
+    .main__container table{
+        font-size: 14px;
+    }
+
+    .manage-rec-title{
+       width: 300px;
     }
      }
