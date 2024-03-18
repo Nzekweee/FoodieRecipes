@@ -16,8 +16,14 @@ searchContainerBottom = document.querySelector(".search__container-bottom"),
 customDropdowns = document.querySelectorAll(".custom-dropdown"),
 sideBar = document.querySelector('.dashboard__sidebar'),
 showSideBarToggle  = document.querySelector('#show__sidebar-btn'),
-hideSideBarToggle  = document.querySelector('#hide__sidebar-btn')
-// console.log(document.querySelector('aside'))
+hideSideBarToggle  = document.querySelector('#hide__sidebar-btn'),
+fileInput = document.getElementById('user-avatar'),
+recipeImg = document.getElementById('recipe-img'),
+addIngBtn = document.querySelector('.add-ing'),
+ingredientCont = document.querySelector('.ingredient__cont'),
+addDirBtn = document.querySelector('.add-dir'),
+removeDirBtn = document.querySelector('.remove-dir'),
+directionsContainer = document.querySelector('.directions-cont');
 
 
 //navbar
@@ -54,8 +60,74 @@ const hideSideBar = () =>{
 if(sideBar){
  showSideBarToggle.addEventListener('click', showSideBar)
  hideSideBarToggle.addEventListener('click', hideSideBar)
-}
 
+ //upload recipe Img
+ fileInput.addEventListener('change', function() {
+  if (this.files && this.files[0]) {
+      const reader = new FileReader();
+      reader.onload = function(e) {
+          recipeImg.src = e.target.result;
+      };
+      reader.readAsDataURL(this.files[0]);
+  }
+});
+
+   // Create a new ingredient input field
+    addIngBtn ? addIngBtn.addEventListener('click', function() {
+        // Create a new ingredient input field
+        const newIngredientGroup = document.createElement('div');
+        newIngredientGroup.classList.add('recipe-ing-group', 'flex-row');
+
+        const newIngredientInput = document.createElement('input');
+        newIngredientInput.type = 'text';
+        newIngredientInput.classList.add('recipeIngredients');
+        newIngredientInput.name = 'recipeIngredients';
+        newIngredientInput.placeholder = 'Add Ingredient';
+        newIngredientInput.required = true;
+
+        const removeIcon = document.createElement('i');
+        removeIcon.classList.add('fa-solid', 'fa-trash', 'remove-ing');
+        removeIcon.addEventListener('click', function() {
+            ingredientCont.removeChild(newIngredientGroup);
+        });
+
+        newIngredientGroup.appendChild(newIngredientInput);
+        newIngredientGroup.appendChild(removeIcon);
+
+        ingredientCont.insertBefore(newIngredientGroup, addIngBtn);
+    }) : null ;
+
+
+         // Create and removea article  element for directions
+      let stepCounter = 2; 
+  
+      addDirBtn? addDirBtn.addEventListener('click', function() {
+          const newDirectionArticle = document.createElement('article');
+          newDirectionArticle.innerHTML = `
+              <div class="direction-title-cont flex-row">
+                  <span>Step ${stepCounter}</span>
+                  <input type="text" class="direction-tile" name="direction-tile" placeholder="What's step ${stepCounter}" required>
+              </div>
+              <textarea name="" cols="30" rows="10" placeholder="Describe the step"></textarea>
+          `;
+          stepCounter++;
+          directionsContainer.appendChild(newDirectionArticle);
+      }) : null ;
+  
+      removeDirBtn ? removeDirBtn.addEventListener('click', function() {
+          const lastDirectionArticle = directionsContainer.lastElementChild;
+          if (lastDirectionArticle) {
+              directionsContainer.removeChild(lastDirectionArticle);
+              stepCounter--;
+              const prevStepNumber = stepCounter - 1;
+              const prevStepSpan = document.querySelector(`.direction-title-cont:nth-child(${prevStepNumber}) span`);
+              if (prevStepSpan) {
+                  prevStepSpan.textContent = `Step ${prevStepNumber}`;
+              }
+          }
+      }) : null ;
+   
+}
 
 //liking recipes
 let likeBool = false

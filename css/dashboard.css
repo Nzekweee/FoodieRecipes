@@ -25,7 +25,6 @@
     font-size: 18px;
 }
 .dashboard__sidebar{
-    /* position: sticky; */
     top: 120.66px;
     bottom: 0;
     z-index: 10;
@@ -48,7 +47,6 @@ transition: var(--transition);
 }
 
 .main__container{
-/* position: sticky; */
 background: var(--sky);
 width: 100%;
 padding: 1.6rem;
@@ -127,6 +125,13 @@ select:focus {
 
 #create-recipe{
     margin: 0;
+}
+
+#recipe-img{
+    height: 270px;
+    width: 270px;
+    overflow: hidden;
+    object-fit: cover;
 }
 
 @media screen and (max-width: 840px) {

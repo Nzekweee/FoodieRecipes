@@ -37,10 +37,12 @@
         </nav>
          <!-- NavBar Ends-->
          <main class="dashboard__container container">
+            <button id="show__sidebar-btn" class="sidebar__toggle"><i class="fa-solid fa-angle-right"></i></button>
+            <button id="hide__sidebar-btn" class="sidebar__toggle"><i class="fa-solid fa-angle-left"></i></button>
             <aside class="dashboard__sidebar">
                   <ul class="flex-column">
                     <li>
-                        <a href="create-recipe.html" >
+                        <a href="dashboard.html" >
                             <i class="fa-solid fa-pen"></i>
                             <span>Create Recipe</span>
                         </a>
@@ -85,8 +87,8 @@
                             <input type="text" id="recipeTitle" name="recipeTitle" placeholder="Your recipe's title" required>
                           </div>
                         <div class="form-group flex-column">
-                            <label for="">Change Recipe Img</label>
-                            <input type="image" id="recipe-img">
+                            <label for="">Recipe Img</label>
+                            <input type="image" id="recipe-img" alt="Image" src="assets/photo-placeholder.png" disabled>
                           </div>
                           <div class="form-group flex-column user-profile-div">
                             <label for="user-profile">Change Photo</label>
@@ -102,14 +104,6 @@
                                 <input type="text" class="recipeIngredients" name="recipeIngredients" placeholder="Add Ingredient" required>
                                 <i class="fa-solid fa-trash remove-ing"></i>
                              </div>
-                             <div class="recipe-ing-group flex-row">
-                                <input type="text" class="recipeIngredients" name="recipeIngredients" placeholder="Add Ingredient" required>
-                                <i class="fa-solid fa-trash remove-ing"></i>
-                             </div>
-                             <div class="recipe-ing-group flex-row">
-                                <input type="text" class="recipeIngredients" name="recipeIngredients" placeholder="Add Ingredient" required>
-                                <i class="fa-solid fa-trash remove-ing"></i>
-                             </div>
                              <section class="add-ing">
                                 <i class="fa-solid fa-plus"></i>
                                  <span>Add</span>
@@ -117,30 +111,16 @@
                            </div>
                            <div class="form-group flex-column directions">
                             <label for="">Change Directions</label>
-                                 <article>
-                                       <div class="direction-title-cont flex-row">
-                                        <span>Step 1</span>
-                                        <input type="text" 
-                                        class="direction-tile" name="direction-tile" placeholder="What's step 1" required>
-                                       </div>
-                                       <textarea name="" id="" cols="30" rows="10" placeholder="Describe the step"></textarea>
-                                 </article>
-                                 <article>
+                            <div class="directions-cont">
+                                <article>
                                     <div class="direction-title-cont flex-row">
-                                     <span>Step 2</span>
+                                     <span>Step 1</span>
                                      <input type="text" 
                                      class="direction-tile" name="direction-tile" placeholder="What's step 1" required>
                                     </div>
                                     <textarea name="" id="" cols="30" rows="10" placeholder="Describe the step"></textarea>
                               </article>
-                              <article>
-                                <div class="direction-title-cont flex-row">
-                                 <span>Step 3</span>
-                                 <input type="text" 
-                                 class="direction-tile" name="direction-tile" placeholder="What's step 1" required>
-                                </div>
-                                <textarea name="" id="" cols="30" rows="10" placeholder="Describe the step"></textarea>
-                          </article>
+                            </div>
                           <section class="flex-row space-between">
                               <div class="add-dir" >
                                 <i class="fa-solid fa-plus"></i>
@@ -169,7 +149,7 @@
                              <option value="1">Smoothies</option>
                              <option value="1">Breakfast</option>
                            </select>
-                           <button class="view-more-recipe-btn flex-row div-center" id="create-recipe">Edit Recipe</button>
+                           <button class="view-more-recipe-btn flex-row div-center" id="create-recipe">Update Recipe</button>
                       </form>
                 </section>
 
